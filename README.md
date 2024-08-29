@@ -1,4 +1,4 @@
-# WLC-BD
+# Brownian Dynamics of a Microsphere attached to a Worm-like Chain polymer
 WLC-BD is a Python implementation of the Brownian Dynamics Simulation for the Worm-Like Chain (WLC) model. 
 
 ## Overview
