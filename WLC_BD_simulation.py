@@ -5,7 +5,6 @@ Date: 29/08/2024
 This script performs a simulation of the Worm-Like Chain (WLC) model for a magnetic bead system. It calculates the force-extension relation and simulates traces for different forces using the Milstein solver. The simulation parameters and global constants are defined at the beginning of the script.
 The main functions in this script are:
 - wlcfunc(ext, Lp, Lc, T): Calculates the force-extension relation for the WLC model.
-- dsvar(kT, kappa, gamma, fs): Calculates the downsampled equilibrium variance of the Ornstein-Uhlenbeck process.
 - faxenzcorrection_perp(z, r): Calculates the Faxén correction for a sphere of radius r at a distance z from a wall (perpendicular direction).
 - faxenzcorrection_par(z, r): Calculates the Faxén correction for a sphere of radius r at a distance z from a wall (parallel direction).
 - wlcext(f): Calculates the extension for a given force using the WLC model.
@@ -95,12 +94,6 @@ def wlcfunc(ext, Lp, Lc, T):
         Fwlc += a[i] * z_scaled**(i+1)
     return Fwlc * kT/Lp
 
-# Downsampled equilibrium variance of Ornstein-Uhlenbeck process
-def dsvar(kT, kappa, gamma, fs):
-    theta = kappa / gamma
-    sigma2 = 2. * kT / gamma
-
-    return (sigma2 * fs**2 / theta**3) * ( -1 + theta/fs + np.exp(- theta/fs))
 
 # Faxén correction for a sphere of radius r at a distance z from a wall
 fzcoef = np.array([1, -9/8, 0.5, -57/100, 1/5, 7/200, -1/25])
