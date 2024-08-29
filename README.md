@@ -1,6 +1,10 @@
 # WLC-BD
+WLC-BD is a Python implementation of the Brownian Dynamics Simulation for the Worm-Like Chain (WLC) model. 
+
 ## Overview
-WLC-BD is a Python implementation of the Brownian Dynamics Simulation for the Worm-Like Chain (WLC) model. This repository provides tools to simulate and analyze the behavior of polymer chains using the WLC model.
+This script performs a simulation of the Worm-Like Chain (WLC) model for a magnetic bead system. It calculates the force-extension relation and simulates traces for different forces using the Milstein solver. The simulation parameters and global constants are defined at the beginning of the script. The simulation results are saved in a pickle file named `tracesimulations.pickle`.
+
+This script requires the autograd, scipy, and multiprocessing libraries to be installed.
 
 ## Model
 The model assumes the worm-like chain is attached to a hard wall located at $$z=0$$, The other end of the chain is attached to a microsphere which is pulled along the positive $$z$$-axis with a force $$F_{mag}$$. The hydrodynamic effect of the hard wall is modelled by the Faxén correction of the Stoke's drag.
